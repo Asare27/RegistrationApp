@@ -1,6 +1,6 @@
 <?php 
     // establish connection
-   
+    include 'config.php';
     // escape variables for security
 
     if(isset($_POST['submit'])){
@@ -20,7 +20,7 @@
         $district = mysqli_real_escape_string($conn, $_POST['district']);
         $region = mysqli_real_escape_string($conn, $_POST['region']);
 
-        include 'config.php';
+        
 
         // submit data into database
         $sql = "INSERT INTO studenttable (IndexNumber, FirstName, LastName, OtherName, DateOfAdmission, NameOfFormerSchool, DateOfBirth, Gender, ReligiousDenomination, PhoneNumber, HomeTown, PlaceOfBirth, District, Region)
@@ -104,15 +104,12 @@
             </div>
             <div class="col-md-6 mt-md-0 mt-3">
                 <label>Gender</label>
-                <div class="d-flex align-items-center mt-2" name="gender">
-                    <label class="option">
-                        <input type="radio" name="radio">Male
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="option ms-4">
-                        <input type="radio" name="radio">Female
-                        <span class="checkmark"></span>
-                    </label>
+                <div class="d-flex align-items-center mt-2">
+                    <select class="form-control" name="gender">
+                        <option value="male">male</option>
+                        <option value="female">female</option>
+                    </select>
+
                 </div>
             </div>
         </div>
@@ -143,7 +140,7 @@
             </div>
         </div>
 
-        <div class="btn btn-primary mt-3" type="submit" name="login">Submit</div>
+        <button class="btn btn-success mt-3" type="submit" name="submit">Submit</button>
         </div>
 
     </div>
