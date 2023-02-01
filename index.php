@@ -29,9 +29,11 @@
             echo "New record created successfully";
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+            
+            header('location: parentinfo.php');
         }
          mysqli_close($conn);
-
+         
     }
     
 ?>
@@ -51,19 +53,21 @@
 <body>
 <ul class="nav nav-pills">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
+    <a class="nav-link active" aria-current="page" href="#">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Info</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="#">Contact Us</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled">Disabled</a>
+    <a class="nav-link ">Logout</a>
   </li>
 </ul>
-<div class="wrapper rounded bg-white">
+
+<div class="wrapper rounded bg-white"> 
+ 
 
 <div class="h3"> Student Information Form</div>
 
